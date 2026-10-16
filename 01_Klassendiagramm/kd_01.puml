@@ -3,13 +3,12 @@
 !include tools/style.puml
 
 class KlasseA {
-  ' Klasse A
+ 
 }
 
 class KlasseB {
-  ' Klasse B
+ 
 }
-
 
 ' ========================================================
 ' BEZIEHUNGSGESTALTUNG (Auskommentierter Spickzettel)
@@ -39,10 +38,10 @@ class KlasseB {
 ' KlasseA --> KlasseB:" verwendet"
 
 ' Richtung b - a
-' KlasseA <-- KlasseB:""
+' KlasseA <-- KlasseB: " hat"
 
 ' Richtung a <-> b
-' KlasseA <--> KlasseB
+' KlasseA <--> KlasseB " kommunizieren"
 
 
 
@@ -64,14 +63,12 @@ class KlasseB {
 ' Ungerichtet / Standard (Ganzes KlasseA hat Teil KlasseB):
 'KlasseA "1" o-- "*" KlasseB : besteht lose aus
 
-
 ' --- 3. KOMPOSITION ("besteht aus" - strikte Existenzabhängigkeit) ---
 ' Unidirektional (Ganzes KlasseA besitzt KlasseB exklusiv; KlasseB stirbt mit KlasseA):
 ' KlasseA "1" *--> "1..*" KlasseB : erzeugt und besitzt >
 
 ' Ungerichtet / Standard (Ganzes KlasseA besteht fest aus KlasseB):
 ' KlasseA "1" *-- "1..*" KlasseB : besteht fest aus
-
 
 ' --- 4. ZUSÄTZLICH: VERERBUNG & ABHÄNGIGKEIT ---
 ' Generalisierung / Vererbung (KlasseB erbt von KlasseA):

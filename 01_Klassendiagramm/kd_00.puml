@@ -1,0 +1,52 @@
+@startuml kd_artikel
+
+!include tools/style.puml
+
+class Artikel {
+
+    - artikelNr: String
+    - bezeichnung: String
+    - nettopreis: double
+    - aktiv: boolean
+
+    + Artikel()
+    + Artikel(String, String, double)
+
+    + getArtikelNr(): String
+    + setArtikelNr(String): void
+
+    + getBezeichnung(): String
+    + setBezeichnung(String): void
+
+    + getNettopreis(): double
+    + setNettopreis(double): void
+
+    + isAktiv(): boolean
+    + setAktiv(boolean): void
+
+    + berechneBruttopreis(double): double
+}
+
+@enduml
+
+Konstruktor:
+
+Trägt exakt denselben Namen wie die Klasse (Artikel).
+Besitzt keinen Rückgabetyp (auch kein void).
+
+Überladung wird sichtbar gemacht (Standardkonstruktor Artikel() und überladener 
+Konstruktor mit Typensignatur Artikel(String, String, double)).
+
+Getter / Setter:
+
+Getter: Haben keine Übergabeparameter und liefern den Typ des Feldes zurück 
+(getBezeichnung(): String).
+
+Setter: Nehmen den Datentyp des Attributs als Parameter entgegen und haben 
+void als Rückgabetyp (setBezeichnung(String): void).
+
+Booleans: Werden bei Gettern konventionsgemäß oft mit 
+is...(): boolean statt get...() notiert.
+
+Kapselung: Alle Attribute sind konsequent mit - (private) geschützt; 
+der Zugriff von außen erfolgt ausschließlich über die + (public) Methoden.

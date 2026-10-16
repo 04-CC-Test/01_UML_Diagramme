@@ -1,0 +1,19 @@
+@startuml assoziation_unidirektional
+!include tools/style.puml
+
+class Arzt {
+    - arztId: String
+    - fachrichtung: String
+    + untersuchen(Patient): void
+}
+
+class Patient {
+    - versicherungsNr: String
+    - name: String
+    + setHausarzt(Arzt): void
+    + getHausarzt(): Arzt
+}
+
+' Gerichtete Assoziation: Patient kennt Arzt
+Patient "*" --> "1" Arzt : wird betreut von >
+@enduml

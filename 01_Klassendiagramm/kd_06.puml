@@ -1,12 +1,11 @@
-
-@startuml kd
+@startuml beziehungen-kombi
 
 !include tools/style.puml
 
 class Bank {
     - bic: String
     - name: String
-    + eroeffneKonto(kunde: Kunde): Konto
+    + eroeffneKonto(Kunde): Konto
     + schliesseFiliale(): void
 }
 
@@ -18,7 +17,7 @@ class Kunde {
 class Konto {
     - iban: String
     - saldo: double
-    + buchen(betrag: double, text: String): void
+    + buchen(double, String): void
 }
 
 class Buchungssatz {
@@ -26,7 +25,6 @@ class Buchungssatz {
     - betrag: double
     - verwendungszweck: String
 }
-
 
 ' 1. AGGREGATION: Die Bank verwaltet Konten (weiße Raute an Bank)
 Bank "1" o-- "*" Konto : verwaltet >
@@ -36,6 +34,5 @@ Kunde "1" --> "1..*" Konto : besitzt >
 
 ' 3. KOMPOSITION: Ein Konto besteht aus festen Buchungseinträgen (schwarze Raute an Konto)
 Konto "1" *-- "*" Buchungssatz : besteht aus >
+
 @enduml
-
-
