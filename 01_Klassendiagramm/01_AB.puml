@@ -3,24 +3,13 @@
 !include tools/style.puml
 
 class KlasseA {
-  
+  ' Klasse A
 }
 
 class KlasseB {
-  
+  ' Klasse B
 }
 
-@startuml kd
-
-!include tools/style.puml
-
-class KlasseA {
- 
-}
-
-class KlasseB {
-  
-}
 
 ' ========================================================
 ' BEZIEHUNGSGESTALTUNG (Auskommentierter Spickzettel)
@@ -44,13 +33,13 @@ class KlasseB {
   '====================
 
 ' allgemein, ungerichtet
-KlasseA -- KlasseB : " kennen sich"
+' KlasseA -- KlasseB: " kennen sich"
 
 ' Richtung a - b
-' KlasseA --> KlasseB
+' KlasseA --> KlasseB:" verwendet"
 
 ' Richtung b - a
-' KlasseA <-- KlasseB
+' KlasseA <-- KlasseB:""
 
 ' Richtung a <-> b
 ' KlasseA <--> KlasseB
@@ -90,7 +79,5 @@ KlasseA -- KlasseB : " kennen sich"
 
 ' Abhängigkeit / Dependency (KlasseA benutzt KlasseB z. B. nur als Methodenparameter):
 ' KlasseA ..> KlasseB : <<use>>
-
-@enduml
 
 @enduml
